@@ -5,34 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Under Construction</title>
   <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --subtext-color: #777;
+      --font-main: Arial, sans-serif;
+    }
+
     body {
-      background-color: #f9f9f9;
-      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      font-family: var(--font-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
       text-align: center;
-      padding: 100px;
       animation: fadeIn 2s ease-in;
     }
 
+    .emoji {
+      font-size: 4rem;
+      animation: bounce 1.5s infinite;
+    }
+
     h1 {
-      font-size: 3em;
-      color: #333;
-      margin: 20px 0;
+      font-size: 2.5rem;
+      color: var(--text-color);
+      margin: 1rem 0;
       opacity: 0;
       animation: fadeIn 2s ease-in forwards;
       animation-delay: 1s;
     }
 
     p {
-      font-size: 1.5em;
-      color: #777;
+      font-size: 1.25rem;
+      color: var(--subtext-color);
       opacity: 0;
       animation: fadeIn 2s ease-in forwards;
       animation-delay: 2s;
-    }
-
-    .emoji {
-      font-size: 4em;
-      animation: bounce 1.5s infinite;
     }
 
     @keyframes bounce {
@@ -43,6 +56,24 @@
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .emoji {
+        font-size: 3rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      body {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
